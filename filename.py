@@ -1,5 +1,14 @@
 #!/usr/bin/python3
 # -*- coding: utf-8  -*-
+1
+2
+3
+4
+5
+6
+import os
+
+
 
 print()
 print()
@@ -41,7 +50,10 @@ def changeName( ficName, ext )
 
 ext = "bak"
 fileName = "/home/work/work/POEC_DEVOPS_Rennes_Mars/POEC_Devops/faireUneFonction.version2.py"
+for file in fileName:
+    file.replace(".py",".ext")
 fileName = changeName( fileName, ext  )
 
 #resultat  "/home/work/work/POEC_DEVOPS_Rennes_Mars/POEC_Devops/faireUneFonction.version2.bak"
 
+    
