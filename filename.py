@@ -37,11 +37,25 @@ fileNameList = fileName.split( '/')
 
 print( fileNameList[ -1] )
 
-def changeName( ficName, ext )
+def changeName( ficName, ext ):
+    fileNameList = ficName.split( '.')
+    fileNameList[ :-1 ]
+    fileName = ".".join( fileNameList[ :-1 ] ) + "." + ext
+    return fileName
+
+
 
 ext = "bak"
 fileName = "/home/work/work/POEC_DEVOPS_Rennes_Mars/POEC_Devops/faireUneFonction.version2.py"
+fileName = "/home/work/work/POEC_DEVOPS_Rennes_Mars/POEC_Devops/faireUneFonction.version2.bak"
 fileName = changeName( fileName, ext  )
+print( fileName )
+print( changeName( 'toto.jpg', 'png'  ) )
+print( changeName( 'toto.tata.jpg', 'png'  ) )
+print( changeName( 'toto.tata.html', 'web'  ) )
+
+
+
 
 #resultat  "/home/work/work/POEC_DEVOPS_Rennes_Mars/POEC_Devops/faireUneFonction.version2.bak"
 
