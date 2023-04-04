@@ -38,7 +38,7 @@ scrabble =  {
 				"*" : { "point" :  0,  "nombre" :  2 }
 			} 
 
-mot = 'titanic'
+mot = 'toto'
 
 pointTotal = 0
 for lettre in mot.upper():
@@ -46,3 +46,6 @@ for lettre in mot.upper():
 
 print( pointTotal)
 
+
+def calcScrabble( string) :
+    return ...
