@@ -7,16 +7,17 @@
 # les tests se lancent avec cette commande 
 #python3 -m unittest base_TemplateProgramme.py
 
+#from librairie import trucmuche
 
 # importation de la librairie des testUnitaires
-import unittest
-
+# import unittest
+# from myLib import 
 
 # fonction à tester
 def setMaj( string ):
     return string.upper()
 
-
+# Classe commance par une majuscule
 # class des tests unitaires
 class TestAdd(unittest.TestCase):
     def test_setMaj_vide(self):
