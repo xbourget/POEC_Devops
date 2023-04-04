@@ -37,14 +37,14 @@ fileNameList = fileName.split( '/')
 
 print( fileNameList[ -1] )
 
+
 def changeName( ficName, ext ):
     fileNameList = ficName.split( '.')
     fileNameList[ :-1 ]
     fileName = ".".join( fileNameList[ :-1 ] ) + "." + ext
     return fileName
-    print( ficName.replace("py",ext) )
-    #print( ficName.split( '.',-2) )
 
+    print( ficName.replace("py",ext) )
 
 ext = "bak"
 fileName = "/home/work/work/POEC_DEVOPS_Rennes_Mars/POEC_Devops/faireUneFonction.version2.py"

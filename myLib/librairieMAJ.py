@@ -19,6 +19,7 @@ def setMaj( string ):
 
 # class des tests unitaires
 class TestMaj( unittest.TestCase ):
+
     def test_setMaj_vide(self):
         self.assertEqual( setMaj(''), '')
     
@@ -27,18 +28,9 @@ class TestMaj( unittest.TestCase ):
     
     def test_setMaj_accent(self):
         self.assertEqual( setMaj('éèàù'), 'ÉÈÀÙ')
+
+    def test_setMaj_ordinaire(self):
+        self.assertEqual( setMaj('toto'), 'TOTo')
    
 
 
-# cette section est lancée uniquement si ce programme est lui-même lancé
-# il n'est pas éxécuté si il est pappelé en tant que librairie
-if __name__ == "__main__":
-    print( 'je peux tester ici')
-
-    if setMaj( 'toto' ) == 'TOTO' :
-        print( 'test OK')
-    else :
-        print( 'test KO')
-
-    
-    
