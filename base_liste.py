@@ -6,7 +6,7 @@ print( "x" * 19 + " les listes" )
 noms = [ 'toto', 'tata', 'titi', 'tutu', 'tete', 'tyty' ]
 
 print( noms  )
-print( noms[ 0 ]  )
+print( noms[ 0 ]  )nom[0]
 print( noms[ 2:4 ]  )
 print( noms[ 2: ]  )
 print( noms[ -1 ]  )
@@ -41,7 +41,8 @@ print( noms )
 print( unNom )
 
 noms.insert( 0, 'dodo')
-print( noms )
+
+print( noms )nom[0]
 noms.insert( len( noms ), 'dudu')
 print( noms )
 noms.insert( len( noms )//2, 'didi')
@@ -49,7 +50,7 @@ print( noms )
 noms.remove( 'didi')
 print( noms )
 #noms = noms[:len( noms )//2] + 'didi' + noms[len( noms )//2:] 
-noms = noms[:len( noms )//2] + ['didi'] + noms[len( noms )//2:] 
+noms = noms[  :len( noms )//2] + ['didi'] + noms[len( noms )//2:] 
 noms.insert( 0, 'didi') 
 print( noms )
 print(  noms.count( 'didi')  )
@@ -63,11 +64,11 @@ def majuscule( string ):
     return string.upper()
 
 listMaj = list( map( majuscule, noms  )) 
-print( listMaj )
+print( listMaj  )
 
 # version lambda
 
-listMaj = list( map( lambda nom: nom.upper(), noms  )) 
+listMaj = list( map( lambda n: n.upper(), noms  )) 
 print( listMaj )
 
 listD = list( filter( lambda nom: nom[0] == 'd', noms  )) 
