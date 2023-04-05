@@ -13,14 +13,15 @@ from myLib.librairieMAJ import setMaj
 from myLib.scrabble import calcScrabble 
 
 
+
 nom = 'toto'
-
-
-nom = setMaj( nom )
-
-print( nom ) 
-
 
 print( calcScrabble( 'toto' ) )
 print( calcScrabble( 'Wahid' ) )
 print( calcScrabble( '123' ) )
+
+try:
+    print( calcScrabble( 'toto1' ) )
+except Exception as e:
+    print( 'contacter')
+
