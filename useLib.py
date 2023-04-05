@@ -9,16 +9,15 @@
 
 
 # importation de la librairie des testUnitaires
-#from myLib.librairieMAJ import setMaj  
+from myLib.librairieMAJ import setMaj  
 from myLib.scrabble import calcScrabble
 
 
-nom = 'toto'
 
-#nom = setMaj( nom )
 
-print( nom ) 
 
-mot=input("Saisir le mot :")
+
+
+mot=setMaj(input("Saisir le mot :"))
 print("Le nombre de point du mot :"+ mot + "est : " + str(calcScrabble( mot)))
 
