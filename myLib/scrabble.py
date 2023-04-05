@@ -38,14 +38,9 @@ scrabble =  {
 				"*" : { "point" :  0,  "nombre" :  2 }
 			} 
 
-mot = 'toto'
+def calcScrabble(mot) :
+    pointTotal = 0
+    for lettre in mot.upper():
+       pointTotal += scrabble[ lettre ][ 'point' ]
 
-pointTotal = 0
-for lettre in mot.upper():
-    pointTotal += scrabble[ lettre ][ 'point' ]
-
-print( pointTotal)
-
-
-def calcScrabble( string) :
-    return ...
+    return pointTotal
