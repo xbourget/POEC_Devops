@@ -3,14 +3,23 @@
 
 #  [ ]
 
-
 from  myLib.librairieScrabble import calcScrabble
 
-fichierLecture = open( 'legumes.txt' )
+ficNameIn = 'legumes.txt'
+ficNameOut = 'legumes.copy'
+fichierLecture = open( ficNameIn )
+fichierEcriture = open(ficNameOut, "w")
 
-for legume in fichierLecture :
+i=1
+for ligne in fichierLecture:
+    print(ligne, end ='')
+    fichierEcriture.writelines("{0:3} - {1}" .format(i,ligne), score=calcScrabble(ligne))
+    i +=1
+
+for legume in fichierLecture:
     print( legume, end='' )
-    print( calcScrabble( legume ) ) 
+    print( calcScrabble( legume.strip() ) ) 
 
 fichierLecture.close()
+fichierEcriture.close()
 
