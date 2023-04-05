@@ -3,12 +3,13 @@
 
 #  [ ]
 
-
-    # les tests se lancent avec cette commande 
+# les tests se lancent avec cette commande 
 #python3 -m unittest base_TemplateProgramme.py
 
-# importation de la librairie des testUnitaires
 import unittest
+import unidecode
+
+
 
 scrabble =  { 
 				"A" : { "point" :  1,  "nombre" :  9 },  
@@ -40,20 +41,33 @@ scrabble =  {
 				"*" : { "point" :  0,  "nombre" :  2 }
 			} 
 
-def calcScrabble( mot) :
+
+def calcScrabble( string ):
 	pointTotal = 0
-	for lettre in mot.upper():
-		pointTotal += scrabble[ lettre ][ 'point' ]
+	string = unidecode.unidecode( string )
+	for lettre in string.upper():
+		if lettre in scrabble.keys():
+			pointTotal += scrabble[ lettre ][ 'point' ]
 	return pointTotal
 
-
-# class des tests unitaires
 class MyTest( unittest.TestCase ):
-    def test_calcScrabble_vide(self):
-        self.assertEqual( calcScrabble(''), 0)
-    
-    def test_calcScrabble_digit(self):
-        self.assertEqual( calcScrabble('toto'), 4)
 
-  
-    
+	def test_vide( self ):
+		self.assertEqual( calcScrabble( ''),  0)
+
+	def test_aaaa( self ):
+		self.assertEqual( calcScrabble( 'aaaa'),  4 )
+
+	def test_123( self ):
+		self.assertEqual( calcScrabble( '123'),  0 )
+
+	def test_124( self ):
+		self.assertEqual( calcScrabble( 'é'), 1  )
+
+
+
+
+
+if __name__ == '__main__' :
+	print ( 'hello toto ')
+	print( calcScrabble( '123' ) )
