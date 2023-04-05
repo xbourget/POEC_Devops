@@ -3,17 +3,23 @@
 
 #  [ ]
 
+from myLib.librairieScrabble import calcScrabble 
 
 ficNameIN = 'legumes.txt'
 ficNameOUT = 'legumes.cpy'
 
-fichierLecture = open( ficNameIN )
-fichierEcriture = open(ficNameOUT, "w")
+fichierLecture = open( ficName )
 
+i = 8
 for ligne in fichierLecture :
-    print( ligne, end='')
+    print( ligne )
 
-fichierEcriture.writelines(ligne)
+print( '*-*-' * 20 )
+fichierLecture.seek( 0, 0)
+
+data = fichierLecture.read()
+
+print( data )
 
 fichierLecture.close()
 fichierEcriture.close()
