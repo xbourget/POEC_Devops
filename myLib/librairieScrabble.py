@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 # -*- coding: utf-8  -*-
 
 #  [ ]
@@ -7,6 +8,8 @@
     # les tests se lancent avec cette commande 
 #python3 -m unittest base_TemplateProgramme.py
 
+import unittest
+import unidecode
 
 scrabble =  { 
 				"A" : { "point" :  1,  "nombre" :  9 },  
@@ -38,14 +41,35 @@ scrabble =  {
 				"*" : { "point" :  0,  "nombre" :  2 }
 			} 
 
-mot = 'toto'
 
-pointTotal = 0
-for lettre in mot.upper():
-    pointTotal += scrabble[ lettre ][ 'point' ]
+def calcScrabble( string) :   
+	pointTotal = 0
+	string= unidecode.unidecode(string)
+	#print( string ) 
 
-print( pointTotal)
+	for lettre in string.upper():
+		try :
+		#print( lettre ) 
+			pointTotal += scrabble[ lettre ][ 'point' ]
+		except KeyError as e:
+			return 0
+	return( pointTotal )
 
+class MyTest (unittest.TestCase):
+   def test_vide(self):
+      self.assertEqual(calcScrabble(''), 0)
+   def test_toto(self):
+      self.assertEqual(calcScrabble('toto'), 4)
+   def test_123(self):
+      self.assertEqual(calcScrabble('123'), 0)
+   def test_u(self):
+      self.assertEqual(calcScrabble('é'), 1)
+   def test_ou(self):
+      self.assertEqual(calcScrabble('où'), 2)
+   def test_T2p(self):
+      self.assertEqual(calcScrabble('T2p'), 0)
+   def test_PApy(self):
+      self.assertEqual(calcScrabble('PApy'), 17)
 
-def calcScrabble( string) :
-    return ...
+if __name__  == '__main__':
+     print( calcScrabble('T2P') ) 
