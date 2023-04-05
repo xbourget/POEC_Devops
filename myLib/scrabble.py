@@ -42,10 +42,13 @@ scrabble =  {
 def calcScrabble(mot) :
     pointTotal = 0
     for lettre in mot.upper():
-       if lettre in scrabble.keys():
-           pointTotal += scrabble[ lettre ][ 'point' ]
-       else:
-            return 0
+       
+       #if lettre in scrabble.keys():
+           try:
+               pointTotal += scrabble[ lettre ][ 'point' ]
+           except Exception as e:
+                print('une lettre inconnue')
+                return 0
     return pointTotal
 
 class MyTest(unittest.TestCase):

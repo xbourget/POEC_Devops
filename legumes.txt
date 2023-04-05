@@ -5,3 +5,11 @@ poireau
 choux
 carotte
 topinanbour
+rutabaga
+patate
+navet
+poireau
+choux
+carotte
+topinanbour
+rutabaga
