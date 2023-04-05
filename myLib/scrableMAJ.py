@@ -1,11 +1,12 @@
-#!/usr/bin/python3
-# -*- coding: utf-8  -*-
-
-#  [ ]
+  [ ]
 
 
-    # les tests se lancent avec cette commande 
+# les tests se lancent avec cette commande 
 #python3 -m unittest base_TemplateProgramme.py
+
+import unittest
+import unidecode
+
 
 
 scrabble =  { 
@@ -38,14 +39,33 @@ scrabble =  {
 				"*" : { "point" :  0,  "nombre" :  2 }
 			} 
 
-mot = 'toto'
 
-pointTotal = 0
-for lettre in mot.upper():
-    pointTotal += scrabble[ lettre ][ 'point' ]
+def calcScrabble( string ):
+	pointTotal = 0
+	string = unidecode.unidecode( string )
+	for lettre in string.upper():
+		if lettre in scrabble.keys():
+			pointTotal += scrabble[ lettre ][ 'point' ]
+	return pointTotal
 
-print( pointTotal)
+class MyTest( unittest.TestCase ):
+
+	def test_vide( self ):
+		self.assertEqual( calcScrabble( ''),  0)
+
+	def test_aaaa( self ):
+		self.assertEqual( calcScrabble( 'aaaa'),  4 )
+
+	def test_123( self ):
+		self.assertEqual( calcScrabble( '123'),  0 )
+
+	def test_123( self ):
+		self.assertEqual( calcScrabble( 'é'), 1  )
 
 
-def calcScrabble( string) :
-    return ...
+
+
+
+if __name__ == '__main__' :
+	print ( 'hello toto ')
+	print( calcScrabble( '123' ) )

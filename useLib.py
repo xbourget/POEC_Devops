@@ -10,8 +10,7 @@
 
 # importation de la librairie des testUnitaires
 from myLib.librairieMAJ import setMaj  
-from myLib.scrabble import *  
-
+from myLib.scrabble import calcScrabble 
 
 nom = 'toto'
 
@@ -22,4 +21,6 @@ print( nom )
 
 
 print( calcScrabble( 'toto' ) )
-    
+print( calcScrabble( 'Wahid' ) )
+print( calcScrabble( '123' ) )
+
