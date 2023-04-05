@@ -31,6 +31,7 @@ class TestMaj( unittest.TestCase ):
 
     def test_setMaj_ordinaire(self):
         self.assertEqual( setMaj('toto'), 'TOTo')
+        
    
 
 

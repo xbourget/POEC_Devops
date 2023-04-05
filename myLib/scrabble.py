@@ -6,8 +6,9 @@
 
     # les tests se lancent avec cette commande 
 #python3 -m unittest base_TemplateProgramme.py
-
-
+ 
+import unittest
+ 
 scrabble =  { 
 				"A" : { "point" :  1,  "nombre" :  9 },  
 				"B" : { "point" :  3,  "nombre" :  2 },  	
@@ -41,6 +42,29 @@ scrabble =  {
 def calcScrabble(mot) :
     pointTotal = 0
     for lettre in mot.upper():
-       pointTotal += scrabble[ lettre ][ 'point' ]
-
+       if lettre in scrabble.keys():
+           pointTotal += scrabble[ lettre ][ 'point' ]
     return pointTotal
+
+class MyTest (unittest.TestCase):
+           
+           def test_vide( self ):
+               self.assertEqual( calcScrabble(''), 0)
+    
+           def test_digit(self):
+               self.assertEqual( calcScrabble('123'), 4)
+    
+           def test_accent(self):
+               self.assertEqual( calcScrabble('éèàù'), 0)
+
+           def test_ordinaire(self):
+               self.assertEqual( calcScrabble('é'), 1)
+            
+           def test_caractere_special(self):
+               self.assertEqual( calcScrabble('@'), "-----------------Errop")
+
+#if __name__== 'main' :
+     
+   #  mot=input("Saisir le mot :")
+    # print("Le nombre de point du mot :" + mot + "est : " + str(MyTest(calcScrabble(mot))))
+
