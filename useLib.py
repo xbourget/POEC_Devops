@@ -3,22 +3,23 @@
 
 #  [ ]
 
-
 # les tests se lancent avec cette commande 
 #python3 -m unittest base_TemplateProgramme.py
 
 
 # importation de la librairie des testUnitaires
-from myLib.librairieMAJ import setMaj  
-from myLib.Scrabble import setMaj  
-
+#from myLib.librairieMAJ import setMaj  
+from myLib.scrabble import calcScrabble 
 
 nom = 'toto'
 
 
-nom = setMaj( nom )
+#nom = setMaj( nom )
 
 print( nom ) 
 
 
 print( calcScrabble( 'toto' ) )
+print( calcScrabble( 'Wahid' ) )
+print( calcScrabble( '123' ) )
+
