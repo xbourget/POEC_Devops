@@ -65,11 +65,6 @@ class MyTest( unittest.TestCase ):
 	def test_123( self ):
 		self.assertEqual( calcScrabble( 'é'), 1  )
 
-	def test_123if __name__ == '__main__' :
-	print ( 'hello toto ')
-	print( calcScrabble( '123' ) )
-( self ):
-		self.assertEqual( calcScrabble( [ 'toto' ]), 0  )
 
 
 

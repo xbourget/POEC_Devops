@@ -10,7 +10,6 @@
 
 # importation de la librairie des testUnitaires
 from myLib.librairieMAJ import setMaj  
-
 from myLib.scrabble import calcScrabble 
 
 
