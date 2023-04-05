@@ -7,6 +7,8 @@
     # les tests se lancent avec cette commande 
 #python3 -m unittest base_TemplateProgramme.py
 
+# importation de la librairie des testUnitaires
+import unittest
 
 scrabble =  { 
 				"A" : { "point" :  1,  "nombre" :  9 },  
@@ -38,11 +40,18 @@ scrabble =  {
 				"*" : { "point" :  0,  "nombre" :  2 }
 			} 
 
-mot = 'titanic'
+def calcScrabble( mot) :
+	pointTotal = 0
+	for lettre in mot.upper():
+		pointTotal += scrabble[ lettre ][ 'point' ]
+	return pointTotal
 
-pointTotal = 0
-for lettre in mot.upper():
-    pointTotal += scrabble[ lettre ][ 'point' ]
 
-print( pointTotal)
-
+# class des tests unitaires
+class TestMaj( unittest.TestCase ):
+    def test_calcScrabble_vide(self):
+        self.assertEqual( calcScrabble(''), '0')
+    
+    def test_calcScrabble_digit(self):
+        self.assertEqual( calcScrabble('toto'), '4')
+    
