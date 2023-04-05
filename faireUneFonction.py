@@ -7,7 +7,7 @@ def mutipli( lim ):
             print( "{0:2d} ".format( i*j ) , end='' )
         print()
 
-mutipli( 3 )
+mutipli( 3 )  
 mutipli( 7 )
 
 
