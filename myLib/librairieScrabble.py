@@ -45,12 +45,13 @@ scrabble =  {
 def calcScrabble( string) :   
 	pointTotal = 0
 	string= unidecode.unidecode(string)
-	print( string ) 
+	#print( string ) 
+
 	for lettre in string.upper():
-		print( lettre ) 
-		if lettre in scrabble.keys():
+		try :
+		#print( lettre ) 
 			pointTotal += scrabble[ lettre ][ 'point' ]
-		else:
+		except KeyError as e:
 			return 0
 	return( pointTotal )
 
@@ -69,9 +70,6 @@ class MyTest (unittest.TestCase):
       self.assertEqual(calcScrabble('T2p'), 0)
    def test_PApy(self):
       self.assertEqual(calcScrabble('PApy'), 17)
-    
-
-
 
 if __name__  == '__main__':
      print( calcScrabble('T2P') ) 
