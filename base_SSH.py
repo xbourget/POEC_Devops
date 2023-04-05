@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: utf-8  -*-
 
-# pip install paramiko
+# pip install paramiko   
+
 
 import paramiko
 from  secret import data 
