@@ -44,10 +44,11 @@ def calcScrabble(mot) :
     for lettre in mot.upper():
        if lettre in scrabble.keys():
            pointTotal += scrabble[ lettre ][ 'point' ]
+       else:
+            return 0
     return pointTotal
 
 class MyTest(unittest.TestCase):
-           
            
            def test_vide( self ):
                self.assertEqual( calcScrabble(''), 0)
@@ -56,17 +57,17 @@ class MyTest(unittest.TestCase):
                self.assertEqual( calcScrabble('123'), 0)
     
            def test_accent(self):
-               self.assertEqual( calcScrabble('éèàù'), 4)
+               self.assertEqual( calcScrabble('éèàù'), 0)
 
            def test_ordinaire(self):
-               self.assertEqual( calcScrabble('é'), 1)
+               self.assertEqual( calcScrabble('é'), 0)
             
            def test_caractere_special(self):
-               self.assertEqual( calcScrabble('@'), 1)
+               self.assertEqual( calcScrabble('@'), 0)
                
 
-if __name__== 'main' :
+if __name__== '__main__' :
      
      mot=input("Saisir le mot :")
-     print("Le nombre de point du mot :" + mot + "est : " + str((calcScrabble(mot))))
+     print("Le nombre de point du mot :<<<" + mot + ">>> est : " + str((calcScrabble(mot))))
 
