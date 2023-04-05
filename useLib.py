@@ -16,8 +16,6 @@ from myLib.scrabble import calcScrabble
 
 
 
-
-
 mot=setMaj(input("Saisir le mot :"))
 print("Le nombre de point du mot :"+ mot + "est : " + str(calcScrabble( mot)))
 
