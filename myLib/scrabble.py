@@ -42,7 +42,7 @@ mot = 'titanic'
 
 
 
-def calcScrable( string ):
+def calcScrabble( string ):
 	pointTotal = 0
 	for lettre in string.upper():
 		pointTotal += scrabble[ lettre ][ 'point' ]
