@@ -10,15 +10,13 @@
 
 # importation de la librairie des testUnitaires
 from myLib.librairieMAJ import setMaj  
-from myLib.scrableMAJ import calcScrabble 
+from myLib.librairieScrabble import calcScrabble  
 
 
 nom = 'toto'
 
+try:
+    print( calcScrabble( 'toto1' ) )
+except Exception as e:
+    print( 'contacter')
 
-nom = setMaj( nom )
-
-print( nom ) 
-
-
-print( calcScrabble( 'toto' ) )

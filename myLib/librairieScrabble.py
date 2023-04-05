@@ -1,15 +1,15 @@
 #!/usr/bin/python3
+
 # -*- coding: utf-8  -*-
 
 #  [ ]
 
-# les tests se lancent avec cette commande 
+
+    # les tests se lancent avec cette commande 
 #python3 -m unittest base_TemplateProgramme.py
 
 import unittest
 import unidecode
-
-
 
 scrabble =  { 
 				"A" : { "point" :  1,  "nombre" :  9 },  
@@ -42,34 +42,34 @@ scrabble =  {
 			} 
 
 
-mot = 'toto'
-
-def calcScrabble( string ):
+def calcScrabble( string) :   
 	pointTotal = 0
-	string = unidecode.unidecode( string )
+	string= unidecode.unidecode(string)
+	#print( string ) 
+
 	for lettre in string.upper():
-		if lettre in scrabble.keys():
+		try :
+		#print( lettre ) 
 			pointTotal += scrabble[ lettre ][ 'point' ]
-	return pointTotal
+		except KeyError as e:
+			return 0
+	return( pointTotal )
 
-class MyTest( unittest.TestCase ):
+class MyTest (unittest.TestCase):
+   def test_vide(self):
+      self.assertEqual(calcScrabble(''), 0)
+   def test_toto(self):
+      self.assertEqual(calcScrabble('toto'), 4)
+   def test_123(self):
+      self.assertEqual(calcScrabble('123'), 0)
+   def test_u(self):
+      self.assertEqual(calcScrabble('é'), 1)
+   def test_ou(self):
+      self.assertEqual(calcScrabble('où'), 2)
+   def test_T2p(self):
+      self.assertEqual(calcScrabble('T2p'), 0)
+   def test_PApy(self):
+      self.assertEqual(calcScrabble('PApy'), 17)
 
-	def test_vide( self ):
-		self.assertEqual( calcScrabble( ''),  0)
-
-	def test_aaaa( self ):
-		self.assertEqual( calcScrabble( 'aaaa'),  4 )
-
-	def test_123( self ):
-		self.assertEqual( calcScrabble( '123'),  0 )
-
-	def test_124( self ):
-		self.assertEqual( calcScrabble( 'é'), 1  )
-
-
-
-if __name__ == '__main__' :
-	print ( 'hello toto ')
-	print( calcScrabble( '123' ) )
-
-
+if __name__  == '__main__':
+     print( calcScrabble('T2P') ) 
