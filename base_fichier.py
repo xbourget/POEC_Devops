@@ -7,7 +7,7 @@
 ficName = 'base_liste.py'
 
 
-legumes =   [ 'rutabaga', 'patate', 'navet', 'poireau', 'choux', 'carotte',  'topinanbour', 'coriandre' , 'ail', 'persil']
+legumes =   [ 'rutabaga', 'patate', 'navet', 'poireau', 'choux', 'carotte',  'topinanbour', 'coriandre' , 'ail', 'persil', 'salade']
 
 fichierEcriture = open( 'legumes.txt', 'w' )
 

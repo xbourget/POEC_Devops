@@ -5,3 +5,7 @@ poireau
 choux
 carotte
 topinanbour
+coriandre
+ail
+persil
+salade

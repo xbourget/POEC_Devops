@@ -1,9 +1,11 @@
-
-| 8.00|  - |rutabaga                      | |    11    |
-| 9.00|  - |patate                        | |    8     |
-|10.00|  - |navet                         | |    8     |
-|11.00|  - |poireau                       | |    9     |
-|12.00|  - |choux                         | |    19    |
-|13.00|  - |carotte                       | |    9     |
-|14.00|  - |topinanbour                   | |    15    |
-
+| 1.00|  - |rutabaga                      | |    11    |
+| 2.00|  - |patate                        | |    8     |
+| 3.00|  - |navet                         | |    8     |
+| 4.00|  - |poireau                       | |    9     |
+| 5.00|  - |choux                         | |    19    |
+| 6.00|  - |carotte                       | |    9     |
+| 7.00|  - |topinanbour                   | |    15    |
+| 8.00|  - |coriandre                     | |    12    |
+| 9.00|  - |persil                        | |    8     |
+|10.00|  - |ail                           | |    3     |
+|11.00|  - |haricot                       | |    12    |
