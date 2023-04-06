@@ -3,19 +3,19 @@
 
 #  [ ]
 
+from myLib.librairieScrabble import calcScrabble 
 
-ficName = 'dicoCompte.py'
+ficNameIN = 'legumes.txt'
+ficNameOUT = 'legumes.cpy'
 
-fichierLecture = open( ficName )
+fichierLecture  = open( ficNameIN )
+fichierEcriture = open( ficNameOUT, "w" )
 
+i = 8
 for ligne in fichierLecture :
+    ligne = "|{num:>5.2f}|  - |{leg:<30}| |{score:^10d}|".format( num=i*1.0, leg=ligne[:-1], score=calcScrabble(ligne[:-1]) )
     print( ligne )
-
-print( '*-*-' * 20 )
-fichierLecture.seek( 0, 0)
-
-data = fichierLecture.read()
-
-print( data )
-
+    fichierEcriture.writelines( ligne +  "\n" )
+    i += 1
 fichierLecture.close()
+fichierEcriture.close()
