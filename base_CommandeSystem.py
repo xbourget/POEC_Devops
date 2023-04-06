@@ -16,6 +16,7 @@ print( output )
 
 import subprocess
 
+#Commande / Argument / Cible
 process = subprocess.Popen(
                             ['echo', 'Hello Toto'],
                             stdout=subprocess.PIPE, 
