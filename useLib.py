@@ -10,8 +10,12 @@
 
 # importation de la librairie des testUnitaires
 from myLib.librairieMAJ import setMaj  
+<<<<<<< HEAD
 from myLib.librairieScrabble import calcScrabble  
 
+=======
+from myLib.scrableMAJ import calcScrabble
+>>>>>>> main
 
 nom = 'toto'
 
