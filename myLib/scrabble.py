@@ -8,6 +8,10 @@
 
 import unittest
 import unidecode
+#from unidecode import unidecode
+
+    # les tests se lancent avec cette commande 
+#python3 -m unittest 
 
 scrabble =  { 
 				"A" : { "point" :  1,  "nombre" :  9 },  
@@ -39,48 +43,16 @@ scrabble =  {
 				"*" : { "point" :  0,  "nombre" :  2 }
 			} 
 
-mot = 'toto'
-
-pointTotal = 0
-for lettre in mot.upper():
-    pointTotal += scrabble[ lettre ][ 'point' ]
-
-print( pointTotal)
-
-print ( "xx**xx" * 5 + "  Code de Christophe  " + "xx**xx" * 5 )
-print("Installation de pip install unidecode indispensable")
-
-from unidecode import unidecode
-
-def calcScrabble( string) :
-    # si le mot comporte des accents, je les transforme en lettres sans accents
-	# si le mot comporte des espaces ou des chiffres, tu sors
-    string = unidecode( string )
-    print ( string )
-    string = string.strip()
-    print ( string )
-	# si le mot comporte plus de lettres qu\'il n'en existe dans le jeu, tu sors
-	
-    total_count=0
-    for lettres in string.upper() :	
-        
-
-        total_count += scrabble[ lettres ][ 'point' ] 
-    print ( "total_count : " + str( total_count ) )
-
-calcScrabble( "Pépé" )
-
 #python3 -m unittest
 
-"""
 def calcScrabble( string ):
 	pointTotal = 0
-	string = unidecode.unidecode( string )
+	#string = unidecode.unidecode( string )
 	for lettre in string.upper():
 		if lettre in scrabble.keys():
 			pointTotal += scrabble[ lettre ][ 'point' ]
 	return pointTotal
-"""
+
 
 class MyTest( unittest.TestCase ):
 
@@ -93,14 +65,9 @@ class MyTest( unittest.TestCase ):
 	def test_123( self ):
 		self.assertEqual( calcScrabble( '123'),  0 )
 
-	def test_123( self ):
-		self.assertEqual( calcScrabble( 'é'), 1  )
-
-
-
-
 
 if __name__ == '__main__' :
 	print ( 'hello toto ')
 	print( calcScrabble( '123' ) )
+
 
