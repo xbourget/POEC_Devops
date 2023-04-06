@@ -12,7 +12,6 @@
 from myLib.librairieMAJ import setMaj  
 from myLib.librairieScrabble import calcScrabble  
 
-
 nom = 'toto'
 
 try:
