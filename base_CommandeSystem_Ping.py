@@ -4,9 +4,9 @@
 import os
 import subprocess
 
-process = subprocess.Popen(['ping', '-c 4', 'python.org'], 
-                           stdout=subprocess.PIPE,
-                           universal_newlines=True)
+process = subprocess.Popen(
+                        ['ping', '-c 4', 'python.org'], 
+                           stdout=subprocess.PIPE)
 
 while True:
     output = process.stdout.readline()
