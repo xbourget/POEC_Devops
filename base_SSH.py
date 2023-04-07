@@ -4,14 +4,12 @@
 # pip install paramiko
 
 import paramiko
-from  secret import data 
 
-host = "192.168.1.149"
-host = "192.168.155.31"
-username = "work"
-#username = "mitia"
-password = data.passwordWork
-#password = data.passwordMitia
+host = "172.16.0.177"
+username = "phil"
+password = 'password'
+
+jngjdf54654-
 
 client = paramiko.client.SSHClient()
 client.set_missing_host_key_policy(paramiko.AutoAddPolicy())

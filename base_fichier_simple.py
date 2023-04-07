@@ -11,7 +11,7 @@ ficNameOUT = 'legumes.cpy'
 fichierLecture  = open( ficNameIN )
 fichierEcriture = open( ficNameOUT, "w" )
 
-i = 8
+i = 0
 for ligne in fichierLecture :
     ligne = "|{num:>5.2f}|  - |{leg:<30}| |{score:^10d}|".format( num=i*1.0, leg=ligne[:-1], score=calcScrabble(ligne[:-1]) )
     print( ligne )

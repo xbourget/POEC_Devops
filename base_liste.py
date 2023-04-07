@@ -6,18 +6,16 @@ print( "x" * 19 + " les listes" )
 noms = [ 'toto', 'tata', 'titi', 'tutu', 'tete', 'tyty' ]
 
 print( noms  )
-print( noms[ 0 ]  )nom[0]
+print( noms[ 0 ]  )
 print( noms[ 2:4 ]  )
 print( noms[ 2: ]  )
 print( noms[ -1 ]  )
 print( noms[ -2 ]  )
 print( noms[ -2: ]  )
 print( noms[ :: 2 ]  )
-print( noms[ ::-1 ]  )
+print( noms[ ::-1]  )
 
-print( "x" * 19 + " les chaines de charactere (string) " )
-
-nom = "philomène"
+nom = 'pilomène'
 
 print( nom  )
 print( nom[ 0 ]  )
@@ -25,7 +23,7 @@ print( nom[ 2:3 ]  )
 print( nom[ 2: ]  )
 print( nom[ -1 ]  )
 print( nom[ :: 2 ]  )
-print( nom[ ::-1 ]  )
+print( nom[ ::-1 ])
 
 
 print( "x" * 19 + " les opérations sur les listes" )
@@ -42,7 +40,7 @@ print( unNom )
 
 noms.insert( 0, 'dodo')
 
-print( noms )nom[0]
+print( noms )
 noms.insert( len( noms ), 'dudu')
 print( noms )
 noms.insert( len( noms )//2, 'didi')
