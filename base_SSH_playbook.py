@@ -4,10 +4,53 @@
 # pip install paramiko
 
 import paramiko
-
+import datetime
 
 from mySecret import annuaire
 
+var = 5
+
+cmd = """
+#!/bin/bash
+$echo password | sudo -S su -
+whoami
+cd /etc/
+tree
+"""
+
+
+def tree( client ):
+    _stdin, _stdout, _stderr = client.exec_command("echo '"+cmd+"' > myTree.sh")
+    _stdin.close()
+    _stdin, _stdout, _stderr = client.exec_command("./myTree.sh")
+    print( 'out',_stdout.read().decode())
+    print( 'err', _stderr.read().decode())
+    _stdin.close()
+    
+
+
+
+def ping( client ):
+    _stdin, stdout, _stderr = client.exec_command("ping -c 5 www.google.com ")
+    #print( 'out',_stdout.read().decode())
+    #print( 'err', _stderr.read().decode())
+    
+
+    x = datetime.datetime.now()
+
+    string = x.strftime("%Y-%m-%d-%H:%M:%S")
+
+    file = open( 'install'+ string +'.log', 'w')
+    while True :
+        output = stdout.readline()
+
+        if len( output ) == 0 :
+            break;
+        file.writelines(  output.strip() + "\n" ) 
+        ##print(output.strip())
+        # Do something else
+    _stdin.close()
+    file.close()
 
 
 def ls( client ):
@@ -60,13 +103,7 @@ def getSSH ( nom ):
 def vector ( nom, payload ):
     client = getSSH ( nom )
 
-
-
-    if type( payload ) == "<class 'str'>":
-        payload( client )
-    else:
-        for pay in payload:
-             pay( client)
+    payload( client )
 
     if client :
         client.close()
@@ -75,4 +112,4 @@ def vector ( nom, payload ):
 #for host in [ 'phil', 'toto']:
 #    vector( host, ls )
 
-vector( 'toto', [ ls, pwd]  )
+vector( 'phil', tree  )
