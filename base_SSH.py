@@ -5,13 +5,14 @@
 
 
 import paramiko
-from  secret import data 
+#from  secret import data 
 
-host = "192.168.1.149"
-host = "192.168.155.31"
-username = "work"
+#host = "192.168.1.149"
+#host = "192.168.155.31"
+host = "172.16.0.146"
+username = "clement"
 #username = "mitia"
-password = data.passwordWork
+password = "password"
 #password = data.passwordMitia
 
 client = paramiko.client.SSHClient()

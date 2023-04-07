@@ -26,3 +26,5 @@ for etudiant in listeEtudiant:
     fichier  =  open(  path + '/' + 'infos.json', 'w'  )
     fichier.write( jason )
     fichier.close()
+
+

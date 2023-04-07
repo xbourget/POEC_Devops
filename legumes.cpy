@@ -6,6 +6,6 @@
 | 6.00|  - |carotte                       | |    9     |
 | 7.00|  - |topinanbour                   | |    15    |
 | 8.00|  - |coriandre                     | |    12    |
-| 9.00|  - |persil                        | |    8     |
-|10.00|  - |ail                           | |    3     |
-|11.00|  - |haricot                       | |    12    |
+| 9.00|  - |ail                           | |    3     |
+|10.00|  - |persil                        | |    8     |
+|11.00|  - |salade                        | |    7     |
