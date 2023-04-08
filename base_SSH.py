@@ -5,6 +5,7 @@
 
 
 import paramiko
+
 #from  secret import data 
 
 #host = "192.168.1.149"
@@ -14,6 +15,7 @@ username = "clement"
 #username = "mitia"
 password = "password"
 #password = data.passwordMitia
+
 
 client = paramiko.client.SSHClient()
 client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
