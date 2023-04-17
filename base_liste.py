@@ -15,7 +15,7 @@ print( noms[ -2: ]  )
 print( noms[ :: 2 ]  )
 print( noms[ ::-1]  )
 
-nom = 'pilomène'
+nom = 'philomène'
 
 print( nom  )
 print( nom[ 0 ]  )
