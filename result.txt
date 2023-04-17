@@ -1,0 +1,12 @@
+philippe
+jessica
+christophe
+dylan
+marius
+adil
+john
+irma
+wahid
+tanguy
+clément
+Python 3.10.6
