@@ -6,7 +6,9 @@ from random import randint
 
 def tireDesDe( nbr ):
     for i in range( nbr ):
-        print( tirageDe() )
+        print( tirageDe(), end = " " )
+    print()
+    print()
         
 def tirageDe( ):
     return randint( 1, 6)
@@ -14,7 +16,6 @@ def tirageDe( ):
 #for i in range(4):
 #    print( tirageDe() )
 
-tireDesDe( 5 )
-print( '--------------')
-tireDesDe( 2 )
+
+tireDesDe( randint( 5, 10 ) )
 
