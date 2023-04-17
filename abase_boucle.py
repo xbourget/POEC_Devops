@@ -22,3 +22,4 @@ i=0
 while i < 50 :
     print( i )
     i += randint(5,20)
+    
