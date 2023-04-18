@@ -13,7 +13,8 @@ ou peu s'en faut : créer quelque chose susceptible d'imprégner l'expérience e
 """
 
 text = stripAccents( text.upper().replace('.', ' ' ).replace(',', ' ' ).replace(':', ' ' ).replace( '\'', ' ') )
-#print( text )
+print( text )
+print( '+x' * 30 )
 
 mots = text.split( )
 
@@ -25,7 +26,7 @@ for mot in mots:
     except KeyError : 
         occurence[ mot ] = 1
 
-#print( occurence )
+print( occurence )
 
 for key in occurence.keys():
     point = comptePoint( key )
@@ -35,11 +36,13 @@ for key in occurence.keys():
 print( '+x' * 30 )
 #print( occurence )
 
-
-listeTest = [ 'OU', "L'EXPERIENCE", "PUISQU'AU",  ]
-
-for mot in listeTest:
+Total = 0
+Total_general = 0
+for mot in occurence :
     print( mot, occurence[ mot ]['nbr'], occurence[ mot ]['point'] )
+    Total = int(occurence[mot]['nbr'])*int( occurence[ mot ]['point'])
+    Total_general += Total
+    print ('Total : '+ str(Total) +'\n')
 
 
-
+print('TOTAL GENERAL :' + str(Total_general))
