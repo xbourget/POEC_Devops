@@ -7,6 +7,14 @@
 # les tests se lancent avec cette commande 
 #python3 -m unittest 
 
+
+
+
+#import unicodedata
+from unicodedata import normalize
+
+
+
 scrabble =  { 
 				"A" : { "point" :  1,  "nombre" :  9 },  
 				"B" : { "point" :  3,  "nombre" :  2 },  	
@@ -37,18 +45,25 @@ scrabble =  {
 			} 
 
 
+
+def stripAccents(text):
+    text = normalize('NFD', text)
+    text = text.encode('ascii', 'ignore')
+    text = text.decode("utf-8")
+    return str(text)
+
+def comptePoint( mot ):
+	pointTotal = 0
+	for lettre in mot.upper():
+		try :
+			pointTotal += scrabble[ lettre ][ 'point' ]
+		except KeyError :
+			print( 'lettre inconnue')
+			#return 0
+	return pointTotal
+
+
 if __name__ == "__main__" :
-
-	def comptePoint( mot ):
-		pointTotal = 0
-		for lettre in mot.upper():
-			try :
-				pointTotal += scrabble[ lettre ][ 'point' ]
-			except KeyError :
-				print( 'lettre inconnue')
-				return 0
-		return pointTotal
-
 	print( comptePoint( 'Zorro' ) )
 	print( comptePoint( 'Zorro2' ) )
 
