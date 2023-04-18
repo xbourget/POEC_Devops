@@ -4,7 +4,7 @@
 #  [ ]
 
 
-    # les tests se lancent avec cette commande 
+# les tests se lancent avec cette commande 
 #python3 -m unittest 
 
 scrabble =  { 
@@ -33,18 +33,22 @@ scrabble =  {
 				"W" : { "point" : 10,  "nombre" :  1 },  	
 				"X" : { "point" : 10,  "nombre" :  1 },  	
 				"Y" : { "point" : 10,  "nombre" :  1 },  	
-				"Z" : { "point" : 10,  "nombre" :  1 },  	
-				"*" : { "point" :  0,  "nombre" :  2 }
+				"Z" : { "point" : 10,  "nombre" :  1 }  	
 			} 
 
-mot = 'toto'
 
-pointTotal = 0
-for lettre in mot.upper():
-    pointTotal += scrabble[ lettre ][ 'point' ]
+if __name__ == "__main__" :
 
-print( pointTotal)
+	def comptePoint( mot ):
+		pointTotal = 0
+		for lettre in mot.upper():
+			try :
+				pointTotal += scrabble[ lettre ][ 'point' ]
+			except KeyError :
+				print( 'lettre inconnue')
+				return 0
+		return pointTotal
 
+	print( comptePoint( 'Zorro' ) )
+	print( comptePoint( 'Zorro2' ) )
 
-def calcScrabble( string) :
-    return ...
