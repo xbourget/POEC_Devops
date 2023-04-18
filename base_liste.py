@@ -69,7 +69,7 @@ print( listMaj  )
 listMaj = list( map( lambda n: n.upper(), noms  )) 
 print( listMaj )
 
-listD = list( filter( lambda nom: nom[0] == 'd', noms  )) 
+listD = list( filter( lambda nom: nom[0] != 'd', noms  )) 
 print( listD )
 
 #noms.insert( len( noms ), 3.14 )
