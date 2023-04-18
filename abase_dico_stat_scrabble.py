@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 # -*- coding: utf-8  -*-
 
+import unittest
 from myLib.scrabble import comptePoint, stripAccents
-
+ 
 text = """
 Si vous donnez aux histoires que vous écrivez à la première personne une vraisemblance telle que 
 les gens finissent par y croire, le lecteur pensera presque forcément qu'elles vous sont effectivement arrivées.
@@ -36,6 +37,7 @@ for key in occurence.keys():
 print( '+x' * 30 )
 #print( occurence )
 
+
 Total = 0
 Total_general = 0
 for mot in occurence :
@@ -43,6 +45,23 @@ for mot in occurence :
     Total = int(occurence[mot]['nbr'])*int( occurence[ mot ]['point'])
     Total_general += Total
     print ('Total : '+ str(Total) +'\n')
+=======
+"""
+listeTest = [ 'OU', "L'EXPERIENCE", "PUISQU'AU",  ]
+for mot in listeTest:
+    print( mot, occurence[ mot ]['nbr'], occurence[ mot ]['point'] )
+"""
 
+
+total = 0
+for mot in occurence.keys():
+    total += (occurence[ mot ]['point'] * occurence[ mot ]['nbr']) 
 
 print('TOTAL GENERAL :' + str(Total_general))
+=======
+print ( total )
+
+class TestScrabble( unittest.TestCase ):
+	def test_mo_text(self):
+		self.assertEqual( comptePoint( text), 864)
+

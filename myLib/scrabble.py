@@ -12,6 +12,7 @@
 
 #import unicodedata
 from unicodedata import normalize
+import unittest 
 
 
 
@@ -52,18 +53,38 @@ def stripAccents(text):
     text = text.decode("utf-8")
     return str(text)
 
+
 def comptePoint( mot ):
 	pointTotal = 0
+	mot = mot.replace( ' ', '')
 	for lettre in mot.upper():
 		try :
 			pointTotal += scrabble[ lettre ][ 'point' ]
 		except KeyError :
-			print( 'lettre inconnue')
+			pass
+			#print( 'lettre inconnue')
 			#return 0
+	if len(mot) >= 7 :
+		pointTotal += 50
 	return pointTotal
+
+class TestScrabble( unittest.TestCase ):
+	def test_faux_mots(self):
+		self.assertEqual( comptePoint(''), 0)
+		self.assertEqual( comptePoint('   '), 0)
+		self.assertEqual( comptePoint(' 1353  '), 0)
+		#self.assertEqual( comptePoint('xwa  2eeee'), 5 )
+
+	def test_mots_courts(self):
+		self.assertEqual( comptePoint('aaaaa'), 5 )
+		self.assertEqual( comptePoint(' aaaaa'), 5 )
+		self.assertEqual( comptePoint(' aaaaax'), 15 )
+
+	def test_mots_longs(self):
+		self.assertEqual( comptePoint('aaaaaaa'), 57 )
+		self.assertEqual( comptePoint('xwa2eeee'), 75 )
 
 
 if __name__ == "__main__" :
 	print( comptePoint( 'Zorro' ) )
 	print( comptePoint( 'Zorro2' ) )
-
