@@ -42,6 +42,9 @@ scrabble =  {
 				"W" : { "point" : 10,  "nombre" :  1 },  	
 				"X" : { "point" : 10,  "nombre" :  1 },  	
 				"Y" : { "point" : 10,  "nombre" :  1 },  	
+				"Z" : { "point" : 10,  "nombre" :  1 },  	
+				"k1" : { "point" : 10,  "nombre" :  1, "famille" : { 'toto' : 12, 'tata' : { 'age' : 16, 'sport' : 'ping-pong'  }  } },  	
+				"Z" : { "point" : 10,  "nombre" :  1 },  	
 				"Z" : { "point" : 10,  "nombre" :  1 }  	
 			} 
 
@@ -86,5 +89,32 @@ class TestScrabble( unittest.TestCase ):
 
 
 if __name__ == "__main__" :
-	print( comptePoint( 'Zorro' ) )
-	print( comptePoint( 'Zorro2' ) )
+	print( scrabble )
+
+	print( 'vw' * 20 )
+	print( list(scrabble.keys()) ) 
+
+	print( 'vw' * 20 )
+	print( scrabble.values() )
+	
+	print( 'vw' * 20 )
+	print( scrabble.items() )
+	
+
+	#print( comptePoint( 'Zorro' ) )
+	#print( comptePoint( 'Zorro2' ) )
+
+	
+	for k in scrabble.keys():
+		scrabble[ k ]  = str(scrabble[ k ]).upper()
+		print( k, scrabble[ k ]   ) 
+
+	for k, v in scrabble.items():
+		v  = str(v).upper()
+		print( k, v  ) 
+		print( k, scrabble[ k ]   ) 
+
+	
+
+
+

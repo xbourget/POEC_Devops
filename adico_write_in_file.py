@@ -11,6 +11,18 @@ Entete = "lettre , points , nombre \n"
 print(Entete)
 file.writelines(Entete)
 
+
+for lettre, data in scrabble.items():
+    # data -> {'point': 1, 'nombre': 9}
+    pts = data[ 'point' ]
+    nbr = data[ 'nombre' ]
+
+    sortie = "{0};{1};{2}".format( lettre, pts, nbr   )
+    #sortie = lettre + ' ' + str(pts) + ' ' + str(nbr) 
+    print( sortie )
+    file.writelines( sortie + "\n")
+
+
 for cle in tableau.keys() :
     
     contenu = tableau[cle]
