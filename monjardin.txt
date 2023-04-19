@@ -1,0 +1,5 @@
+fruit n°0   -> tomate               vendu au kilo(tomate)
+fruit n°1   -> pomme                vendu au kilo(pomme)
+fruit n°2   -> cerise               vendu au kilo(cerise)
+fruit n°3   -> fraise               vendu au kilo(fraise)
+fruit n°4   -> mirtille             vendu au kilo(mirtille)
