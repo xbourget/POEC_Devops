@@ -10,3 +10,4 @@ for letter in scrabble.keys():
     file.write("Letter {letter:<3s} -> {point:<2d} points ({nombre:<2d} occurences)\n".format(letter=letter, point=point, nombre=nombre))
 
 file.close()
+
