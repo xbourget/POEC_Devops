@@ -6,28 +6,18 @@ import  json
 import sqlite3
 
 try:
-    """
-    connection = mariadb.connect(
-        user="db_user",
-        password="db_user_passwd",
-        host="192.0.2.1",
-        port=3306,
-        database="employees"
-    )
-    """
-
     connection = sqlite3.connect('aScrabble.db')
-    
     cursor = connection.cursor()
 
-    requete = """CREATE TABLE IF NOT EXISTS lettres (
-	id integer PRIMARY KEY AUTOINCREMENT,
-	lettre text NOT NULL,
-	points integer,
-	nombre integer
-    );
-    """      
-    cursor.execute( requete ) 
+    for k in scrabble.keys():
+        nbr = scrabble[ k ][ 'nombre' ]
+        pts = scrabble[ k ][ 'point' ]
+
+        requete = "INSERT INTO lettres (lettre, points, nombre) VALUES ('" + k + "', " + str(pts) + ", " + str(nbr) + ");" 
+        print( requete ) 
+        cursor.execute( requete ) 
+        connection.commit()
+    
     cursor.close()
 
 except sqlite3.Error as error:
