@@ -9,5 +9,17 @@ curseur.execute("INSERT INTO Employes (id, nom, prenom, date_embauche, salaire) 
 
 connexion.commit()
 
+# Read data
+conn = sqlite3.connect('ma_base_de_donnees.db')
+
+cursor = conn.cursor()
+
+cursor.execute("SELECT id, name FROM Employees")
+
+rows = cursor.fetchall()
+
+for row in rows:
+    print(row)
+
 connexion.close()
 
