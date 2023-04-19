@@ -1,11 +1,12 @@
 from myLib.scrabble import scrabble
 
 nomFichier = 'monDico.txt'
-file = open(nomFichier, 'w') #handle
+file = open(nomFichier, 'w') # handle
 
-for key in scrabble.keys() :
-
-
-
+for letter in scrabble:
+    point = scrabble[letter]["point"]
+    nombre = scrabble[letter]["nombre"]
+    print("Letter {letter:<3s} -> {point:<2d} points ({nombre:<2d} occurences)".format(letter=letter, point=point, nombre=nombre))
+    file.write("Letter {letter:<3s} -> {point:<2d} points ({nombre:<2d} occurences)\n".format(letter=letter, point=point, nombre=nombre))
 
 file.close()
