@@ -13,7 +13,9 @@ try:
         nbr = scrabble[ k ][ 'nombre' ]
         pts = scrabble[ k ][ 'point' ]
 
-        requete = "INSERT INTO lettres (lettre, points, nombre) VALUES ('" + k + "', " + str(pts) + ", " + str(nbr) + ");" 
+        #requete = "INSERT INTO lettres (lettre, points, nombre) VALUES ('" + k + "', " + str(pts) + ", " + str(nbr) + ");" 
+        requete = "INSERT INTO lettres (lettre, points, nombre) VALUES ( '{0}', {1}, {2} );".format( k, pts, nbr ) 
+        
         print( requete ) 
         cursor.execute( requete ) 
         connection.commit()
