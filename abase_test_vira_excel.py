@@ -11,10 +11,7 @@ df.at[2, 'A'] = 'Hello'
 
 print(df.head(20))
 
-
 df.to_excel('my_excel_file.xlsx', index=False)
-
-df.loc[1, 'B'] = 'Hello Guys'
 
 print(df)
 
