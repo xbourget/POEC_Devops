@@ -26,17 +26,13 @@ try:
 	points integer,
 	nombre integer
     );
-    """
-
-
+    """      
     cursor.execute( requete ) 
-
-    #record = cursor.fetchall()
-    #print("SQLite Database Version is: ", record)
     cursor.close()
 
 except sqlite3.Error as error:
     print("Error while connecting to sqlite", error)
+
 finally:
     if connection:
         connection.close()
