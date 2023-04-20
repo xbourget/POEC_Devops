@@ -3,7 +3,7 @@
 
 from myLib.scrabble import scrabble as tableau
 
-nomFichier = 'monDico.txt'
+nomFichier = 'monDico.csv'
 file = open(  nomFichier, 'w'  )  #handle
 
 # Entete
