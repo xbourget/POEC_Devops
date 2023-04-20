@@ -11,9 +11,14 @@ df.at[2, 'A'] = 'Hello'
 
 print(df.head(20))
 
+
 df.to_excel('my_excel_file.xlsx', index=False)
 
-now = datetime.datetime.now().strftime("%Y-%m-%d")
+df.loc[1, 'B'] = 'Hello Guys'
+
+print(df)
+
+now = datetime.datetime.now().strftime("%Y-%m-%d") 
 
 file_name = "my_excel_file.xlsx"
 
