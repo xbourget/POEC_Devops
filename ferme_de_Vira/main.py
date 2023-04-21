@@ -6,7 +6,7 @@ from myfermeLib.ferme import Ferme
 from myfermeLib.pature import Pature
 from myfermeLib.vache import Vache
 from myfermeLib.cheval import Cheval
-
+from myfermeLib.mouton import Mouton
 
 ferme = Ferme( 'du moulin' )
 
@@ -18,10 +18,11 @@ pature.addElement( Cheval( 'Jumpy Jumper'  ) )
 #pature.add( Chien( 'Rantanplan'  ) )
 pature.addElement( Vache( 'Milka'  ) )
 pature.addElement( Vache( 'Luska'  ) )
-#pature.add( Mouton( 'memeeee'  ) )
+pature.addElement( Mouton( 'Chiao'  ) )
 
 ferme.addRessource( 'foin', 30, 'tonnes'  )
 ferme.addRessource( 'eau',  15000, 'litres'  )
 ferme.addRessource( 'avoine',  5, 'tonnes'  )
+ferme.addRessource( 'herbe',  10, 'tonnes'  )
 
 ferme.run()
