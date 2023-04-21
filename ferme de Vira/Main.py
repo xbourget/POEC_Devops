@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 # -*- coding: utf-8  -*-
 
-from ferme import Ferme
-from cheval import Cheval 
-from chien  import Chien
-from vache  import Vache
-from mouton  import Mouton
+from My_Ferme import Ferme
+from My_Ferme import Cheval 
+from My_Ferme import Chien
+from My_Ferme import Vache
+from My_Ferme import Mouton
 
 
 ferme = Ferme( 'du moulin' )
