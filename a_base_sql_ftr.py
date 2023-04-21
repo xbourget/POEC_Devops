@@ -16,3 +16,4 @@ cursor.execute(requete)
 
 
 con.close()
+
