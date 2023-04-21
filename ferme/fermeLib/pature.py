@@ -7,11 +7,11 @@ class Pature()  :
     def __init__(self, nom, surface) -> None:
         self.nom = nom
         self.surface = surface
-        self.elemeDansPature = []
+        self.elemsDansPature = []
 
     def addElement( self, animal ):
-        self.elemeDansPature.append( animal )
+        self.elemsDansPature.append( animal )
 
-    def getListElement( self, animal ):
-        return self.elemeDansPature
+    def getListElement( self ):
+        return self.elemsDansPature
 
