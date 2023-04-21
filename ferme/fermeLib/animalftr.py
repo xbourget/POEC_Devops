@@ -5,9 +5,10 @@ from fermeLib.fermeftr import Ferme
 from fermeLib.patureftr import Pature
 from fermeLib.ressourceftr import Ressource
 
-class Vache():
+class Animal():
 
     def __init__(self, nom) -> None:
+        
         self.nom = nom
         self.energie = 10
         self.eau = 10
@@ -29,7 +30,6 @@ class Vache():
         self.eau += ressource.consommer('eau',10)
         print(str(self),', je bois')  
         
-
     
     def coucher (self):
         print(str(self),', je me couche')    
