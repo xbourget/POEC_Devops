@@ -11,8 +11,11 @@ class Cheval( Animal )  :
         return 'je suis le cheval ' + super().__str__()
     
     def manger( self ):
-        super().manger()
-        ressource = Ferme.getRessource( 'avoine' )
-        self.energie += ressource.consommer( 10 )
+        if self.isVivant() :
+            super().manger()
+            ressource = Ferme.getRessource( 'avoine' )
+            self.energie += ressource.consommer( 10 )
 
-
+    def bouger( self, qteMouvement ):
+        if self.isVivant() :
+            super().bouger( qteMouvement * 1.5, 'je galope'  )

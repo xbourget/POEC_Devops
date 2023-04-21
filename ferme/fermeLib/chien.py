@@ -11,9 +11,10 @@ class Chien( Animal )  :
         return 'je suis le chien ' + super().__str__()
     
     def manger( self ):
-        super().manger()
-        try:
-            ressource = Ferme.getRessource( 'viande' )
-            self.energie += ressource.consommer( 10 )
-        except :
-            print( 'pas de viande' )
+        if self.isVivant() :
+            super().manger()
+            try:
+                ressource = Ferme.getRessource( 'viande' )
+                self.energie += ressource.consommer( 10 )
+            except :
+                print( 'pas de viande' )

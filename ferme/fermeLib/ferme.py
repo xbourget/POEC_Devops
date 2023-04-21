@@ -42,8 +42,8 @@ class Ferme()  :
     def run( self ):
 
         listeAnimaux = self.getListAnimaux()
-        print( listeAnimaux )
-        for i in range( 1 ):
+        #print( listeAnimaux )
+        for i in range( 3 ):
 
             print( 'aube ... ')
             for animal in listeAnimaux:

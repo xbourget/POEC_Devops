@@ -11,8 +11,12 @@ class Mouton( Animal )  :
         return 'je suis le mouton ' + super().__str__()
     
     def manger( self ):
-        super().manger()
-        ressource = Ferme.getRessource( 'foin' )
-        self.energie += ressource.consommer( 5 )
+        if self.isVivant() :
+            super().manger()
+            ressource = Ferme.getRessource( 'foin' )
+            self.energie += ressource.consommer( 5 )
 
+    def bouger( self, qteMouvement ):
+        if self.isVivant() :
+            super().bouger( qteMouvement * 0.5, 'je broute'  )
 

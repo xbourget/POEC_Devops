@@ -18,5 +18,9 @@ class Vache( Animal )  :
         ressource = Ferme.getRessource( 'foin' )
         self.energie += ressource.consommer( 10 )
 
+    def bouger( self, qteMouvement ):
+        if self.isVivant() :
+            super().bouger( qteMouvement * 0.5, 'je regarde les train'  )
+
 
 
