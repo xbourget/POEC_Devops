@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 # -*- coding: utf-8  -*-
-
-
+from My_fermeLib import Ferme
+from My_fermeLib import Cheval 
+from My_fermeLib import Chien
+from My_fermeLib import Vache
+from My_fermeLib import Mouton
 
 
 ferme = Ferme( 'du moulin' )

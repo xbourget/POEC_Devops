@@ -27,14 +27,13 @@ class Ferme()  :
         return self.ressources[ nom ]
     
     def getListAnnimaux( self ):
-        
-        return 
-        pass
-
+        listElements = []
+        for nom in self.patures.keys() :   
+            listeElements += self.patures[ nom ].getListElement
 
     def run( self ):
         while True:
-            listeAnimaux = getListAnnimaux()
+            listeAnimaux = self.getListAnnimaux()
 
 
 
