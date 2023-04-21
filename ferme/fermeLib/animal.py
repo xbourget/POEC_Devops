@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8  -*-
 
-
 from fermeLib.ferme import Ferme
 from fermeLib.pature import Pature
 from fermeLib.ressource import Ressource
@@ -31,9 +30,3 @@ class Animal()  :
 
     def __str__( self ):
         return "{0} {1}litres {2}calories".format(self.nom, self.eau, self.energie )
-
-    
-
-
-
-
