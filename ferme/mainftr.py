@@ -25,4 +25,3 @@ ferme.addRessource( 'eau',  15000, 'litres'  )
 ferme.addRessource( 'avoine',  5, 'tonnes'  )
 
 ferme.run()
-
