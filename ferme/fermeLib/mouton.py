@@ -5,14 +5,14 @@
 from fermeLib.animal import Animal
 from fermeLib.ferme import Ferme
 
-class Cheval( Animal )  :
+class Mouton( Animal )  :
 
     def __str__( self ):
-        return 'je suis le cheval ' + super().__str__()
+        return 'je suis le mouton ' + super().__str__()
     
     def manger( self ):
         super().manger()
-        ressource = Ferme.getRessource( 'avoine' )
-        self.energie += ressource.consommer( 10 )
+        ressource = Ferme.getRessource( 'foin' )
+        self.energie += ressource.consommer( 5 )
 
 

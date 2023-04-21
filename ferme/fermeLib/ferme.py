@@ -2,6 +2,7 @@
 # -*- coding: utf-8  -*-
 
 
+from random import randint
 from fermeLib.pature import Pature
 from fermeLib.ressource import Ressource
 
@@ -33,17 +34,30 @@ class Ferme()  :
             liteElements += Ferme.patures[ nom ].getListElement()
         return liteElements
 
+
+    def gambader( self, listeAnimaux ):
+            for a in listeAnimaux:
+                a.bouger( randint( 3, 9 ) ) 
+
     def run( self ):
+
         listeAnimaux = self.getListAnimaux()
-        for i in range( 5 ):
+        print( listeAnimaux )
+        for i in range( 1 ):
 
             print( 'aube ... ')
             for animal in listeAnimaux:
                 animal.lever()
 
+            print( 'gambader ... ')
+            self.gambader( listeAnimaux )
+
             print( 'midi ... ')
             for animal in listeAnimaux:
                 animal.manger()
+
+            print( 'gambader ... ')
+            self.gambader( listeAnimaux )
 
             print( 'aurore ... ')
             for animal in listeAnimaux:
@@ -52,6 +66,10 @@ class Ferme()  :
             print( 'stock : ')
             for r in Ferme.ressources.keys():
                 print( '   ->', Ferme.ressources[ r ] )
+
+            print( 'animaux : ')
+            for a in listeAnimaux:
+                print( '   ->', a )
 
             print( '*' * 20 )
 

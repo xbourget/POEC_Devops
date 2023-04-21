@@ -21,13 +21,17 @@ class Animal()  :
 
     def manger( self ):
         print( str(self), 'je mange' )
-        ressource = Ferme.getRessource( 'foin' )
-        self.energie += ressource.consommer( 10 )
         ressource = Ferme.getRessource( 'eau' )
         self.eau += ressource.consommer( 10 )
 
+    def bouger( self, qteMouvement ):
+        print( str(self), 'je bouge' )
+        self.eau -= qteMouvement
+        self.energie -= qteMouvement
+
     def __str__( self ):
-        return 'inconnu'
+        return "{0} {1}litres {2}calories".format(self.nom, self.eau, self.energie )
+
     
 
 
