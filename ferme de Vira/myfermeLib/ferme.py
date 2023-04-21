@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+# -*- coding: utf-8  -*-
+
+
 from fermeLib.pature import Pature
 from fermeLib.ressource import Ressource
 
@@ -50,9 +54,6 @@ class Ferme()  :
                 print( '   ->', Ferme.ressources[ r ] )
 
             print( '*' * 20 )
-
-
-
 
 
 
