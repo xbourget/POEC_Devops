@@ -2,39 +2,58 @@
 # -*- coding: utf-8  -*-
 
 
-from pature import Pature
-from ressource import Ressource
+from My_Ferme.pature import Pature
+from My_Ferme.ressource import Ressource
 
 class Ferme()  :
 
+    patures = {} 
+    ressources = {} 
+
     def __init__(self, nom) -> None:
         self.nom = nom
-        self.patures = {} 
-        self.ressources = {} 
 
     def addPature( self, nom, surface  ):
         pature = Pature( nom, surface ) 
-        self.pature[ nom ] = pature
+        Ferme.patures[ nom ] = pature
 
     def getPature( self, nom ):
-        return self.pature[ nom ]
+        return Ferme.patures[ nom ]
 
     def addRessource( self, nom, qte, unite  ):
         ressource = Ressource( nom, qte, unite ) 
-        self.ressources[ nom ] = ressource
+        Ferme.ressources[ nom ] = ressource
 
-    def getRessource( self, nom, qte, unite  ):
-        return self.ressources[ nom ]
+    def getRessource( nom  ):
+        return Ferme.ressources[ nom ]
     
-    def getListAnnimaux( self ):
-        listElements = []
-        for nom in self.patures.keys() :   
-            listeElements += self.patures[ nom ].getListElement
+    def getListAnimaux( self ):
+        liteElements = []
+        for nom in Ferme.patures.keys():
+            liteElements += Ferme.patures[ nom ].getListElement()
+        return liteElements
 
     def run( self ):
-        while True:
-            listeAnimaux = self.getListAnnimaux()
+        listeAnimaux = self.getListAnimaux()
+        for i in range( 5 ):
 
+            print( 'aube ... ')
+            for animal in listeAnimaux:
+                animal.lever()
+
+            print( 'midi ... ')
+            for animal in listeAnimaux:
+                animal.manger()
+
+            print( 'aurore ... ')
+            for animal in listeAnimaux:
+                animal.coucher()
+
+            print( 'stock : ')
+            for r in Ferme.ressources.keys():
+                print( '   ->', Ferme.ressources[ r ] )
+
+            print( '*' * 20 )
 
 
 
