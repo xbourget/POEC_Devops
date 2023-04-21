@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8  -*-
 
-
 from pature import Pature
 from ressource import Ressource
 
