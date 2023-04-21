@@ -34,7 +34,6 @@ def ping( client ):
     _stdin, stdout, _stderr = client.exec_command("ping -c 5 www.google.com ")
     #print( 'out',_stdout.read().decode())
     #print( 'err', _stderr.read().decode())
-    
 
     x = datetime.datetime.now()
 
@@ -108,8 +107,7 @@ def vector ( nom, payload ):
     if client :
         client.close()
 
-
 #for host in [ 'phil', 'toto']:
 #    vector( host, ls )
 
-vector( 'phil', tree  )
+vector( 'phil', tree )

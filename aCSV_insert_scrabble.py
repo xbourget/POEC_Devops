@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: utf-8  -*-
 
+
+# https://www.tresfacile.net/le-module-csv-python/
 from myLib.scrabble import scrabble
 import csv
 
