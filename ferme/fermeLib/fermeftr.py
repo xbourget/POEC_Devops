@@ -2,39 +2,42 @@
 # -*- coding: utf-8  -*-
 
 
-from pature import Pature
-from ressource import Ressource
+from fermeLib.patureftr import Pature
+from fermeLib.ressourceftr import Ressource
 
 class Ferme()  :
 
+    patures = {} 
+    ressources = {} 
+
     def __init__(self, nom) -> None:
         self.nom = nom
-        self.patures = {} 
-        self.ressources = {} 
-
+        
     def addPature( self, nom, surface  ):
         pature = Pature( nom, surface ) 
-        self.pature[ nom ] = pature
+        Ferme.pature[ nom ] = pature
 
     def getPature( self, nom ):
         return self.pature[ nom ]
 
     def addRessource( self, nom, qte, unite  ):
         ressource = Ressource( nom, qte, unite ) 
-        self.ressources[ nom ] = ressource
+        Ferme.ressources[ nom ] = ressource
 
     def getRessource( self, nom, qte, unite  ):
         return self.ressources[ nom ]
     
-    def getListAnnimaux( self ):
-        
-        return 
-        pass
+    def getListAnimaux( self ):
+        ListElement[]
+        for nom in ferme.patures.keys():
+
+        return ListElement[]
 
 
     def run( self ):
-        while True:
-            listeAnimaux = getListAnnimaux()
+      # while True:
+      for i in range [1,10]:
+            listeAnimaux = getListAnimaux()
 
 
 
