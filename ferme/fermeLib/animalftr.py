@@ -14,7 +14,7 @@ class Animal():
         self.eau = 10
 
     def __str__(self) -> str:
-        return 'je suis la vache : ' + self.nom )        
+        return 'je suis la vache : ' + self.nom       
     
     def lever (self):
         print(str(self),', je me lève')    

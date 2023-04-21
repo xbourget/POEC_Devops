@@ -8,15 +8,15 @@ class Ressource()  :
         self.quantite = qte
         self.unite = unite
 
-    def consommer( self, qte ):
-        if self.quantite > qte :
-            self.quantite -= qte
+    def consomme (self,qte,):
+        if (self.quantite > qte ):
+            self.quantite -=qte
             return qte
-        else:
-            qte = self.quantite
+        else : 
+            qte_restante = self.quantite
             self.quantite = 0
-            return qte  
+            print('stock vide')
+            return qte_restante
         
     def __str__(self):
-        return "{0} {1} {2}".format( self.nom, self.quantite, self.unite )
-
+        return("il reste : {0} {2} de {1}".format(self.nom,self.quantite,self.unite))
